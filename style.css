@@ -1,0 +1,120 @@
+/* --------------------
+   Base Styles
+--------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* --------------------
+   Header & Footer
+--------------------- */
+.site-header,
+.site-footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* --------------------
+   Navigation (Flexbox)
+--------------------- */
+.navbar ul {
+  list-style: none;
+  display: flex; /* Flexbox for nav alignment */
+  justify-content: center;
+  background: #34495e;
+}
+
+.navbar li {
+  margin: 0 1rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+.navbar a:hover {
+  color: #f39c12;
+}
+
+/* --------------------
+   Grid Layout
+--------------------- */
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Main content + sidebar */
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+/* --------------------
+   Content & Cards
+--------------------- */
+.content h2 {
+  margin-bottom: 0.5rem;
+}
+
+.card-container {
+  display: flex; /* Flexbox for cards */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  flex: 1;
+  background: #ecf0f1;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --------------------
+   Sidebar
+--------------------- */
+.sidebar {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-left: 2px solid #ddd;
+}
+
+/* --------------------
+   Responsive Design
+--------------------- */
+
+/* Tablet: stack sidebar below main content */
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* One column */
+  }
+  .sidebar {
+    border-left: none;
+    border-top: 2px solid #ddd;
+    margin-top: 1rem;
+  }
+}
+
+/* Mobile: stack nav links vertically, cards in column */
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column; /* Nav stacked */
+    align-items: center;
+  }
+
+  .card-container {
+    flex-direction: column; /* Cards stacked */
+  }
+}
+
+
